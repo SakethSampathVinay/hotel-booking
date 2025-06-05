@@ -1,0 +1,29 @@
+.exclusive-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.exclusive-heading {
+  font-family: "Roboto";
+}
+
+.exculsive-description {
+  margin-top: -10px;
+}
+
+.total-offer-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.exclusive-card-container {
+  background-size: cover;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 300px;
+  margin-right: 30px;
+  color: white;
+}

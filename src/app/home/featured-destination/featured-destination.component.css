@@ -1,0 +1,63 @@
+.featured-destination-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.featured-card-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 300px;
+  margin: 10px;
+}
+
+.featured-image {
+  height: 150px;
+  width: 100%;
+}
+
+.featured-heading {
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
+.featured-address {
+  margin-top: -10px;
+}
+
+.featured-price-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.featured-price {
+  font-family: "Roboto";
+  font-size: 20px;
+}
+
+.featured-book-now-button {
+  border: 1px solid #add;
+  cursor: pointer;
+}
+
+.featured-total-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.featured-card-content {
+  padding-left: 10px;
+}
+
+.all-destinations-button {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
