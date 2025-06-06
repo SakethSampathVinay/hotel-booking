@@ -1,25 +1,25 @@
-<div class="hotel-rooms-container">
-  <h1 class="hotel-heading">Hotel Rooms</h1>
-  <p class="hotel-description">
-    Take advantage of our limited-time offers and special packages to enhance
-    your stay and create unforgettable memories.
-  </p>
-  <div
-    class="hotel-rooms-card-container"
-    *ngFor="let rooms of roomsDummyData; trackBy: trackByRoom"
-  >
-    <div class="hotel-rooms-content-container">
-      <img class="image" [src]="rooms.images[1]" />
-      <div class="hotel-rooms-content-card-container">
-        <p class="hotel-rooms-city">New York</p>
-        <h1 class="hotel-rooms-name">{{ rooms.hotel.name }}</h1>
-        <p class="hotel-rooms-address">{{ rooms.hotel.address }}</p>
-        <p class="hotel-rooms-amenities">Amenities: {{ rooms.amenities }}</p>
-        <h4 class="hotel-rooms-pricepernight">
-          Price: {{ rooms.pricePerNight }} / night
-        </h4>
+<div class="hotel-rooms-total-container">
+  <div class="hotel-rooms-container">
+    <h1 class="hotel-heading">Hotel Rooms</h1>
+    <p class="hotel-description">
+      Take advantage of our limited-time offers and special packages to enhance
+      your stay and create unforgettable memories.
+    </p>
+    <div class="hotel-rooms-card-container" *ngFor="let rooms of filteredRooms">
+      <div class="hotel-rooms-content-container">
+        <img class="image" [src]="rooms.images[1]" />
+        <div class="hotel-rooms-content-card-container">
+          <p class="hotel-rooms-city">New York</p>
+          <h1 class="hotel-rooms-name">{{ rooms.hotel.name }}</h1>
+          <p class="hotel-rooms-address">{{ rooms.hotel.address }}</p>
+          <p class="hotel-rooms-amenities">Amenities: {{ rooms.amenities }}</p>
+          <h4 class="hotel-rooms-pricepernight">
+            Price: {{ rooms.pricePerNight }} / night
+          </h4>
+        </div>
       </div>
     </div>
+    <hr class="hr-line" />
   </div>
-  <hr class="hr-line" />
+  <app-filters (filteredRoomsChange)="updateRooms($event)"></app-filters>
 </div>
