@@ -15,6 +15,7 @@
           class=""
           [value]="filter"
           (change)="toggleFilter(filter)"
+          [checked]="selectedRoomTypes.includes(filter)"
         />
         {{ filter }}
       </label>
@@ -31,6 +32,7 @@
             class=""
             [value]="price"
             (change)="togglePrice(price)"
+            [checked]="selectedPriceRanges.includes(price)"
           />
           {{ price }}
         </label>
