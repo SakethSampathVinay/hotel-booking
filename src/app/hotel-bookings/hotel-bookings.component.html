@@ -1,0 +1,45 @@
+<div class="bookings-container">
+  <div class="header-section">
+    <h1 class="title">My Bookings</h1>
+    <p class="subtitle">
+      Easily manage your past, current, and upcoming hotel reservations in one
+      place. Plan your trips seamlessly with just a few clicks
+    </p>
+  </div>
+
+  <div class="table-header">
+    <p class="col hotels-col">Hotels</p>
+    <p class="col date-col">Date & Timings</p>
+    <p class="col payment-col">Payment</p>
+  </div>
+
+  <div class="booking-card" *ngFor="let bookings of userBookingsDummyData">
+    <div class="hotel-info">
+      <img [src]="bookings.image" alt="Hotel room" class="hotel-image" />
+      <div class="hotel-details">
+        <h1 class="hotel-name">{{ bookings.hotel.name }}</h1>
+        <p class="hotel-address">{{ bookings.hotel.address }}</p>
+        <p class="hotel-guests">Guests: {{ bookings.guests }}</p>
+        <h3 class="hotel-price">Total: {{ bookings.totalPrice }}</h3>
+      </div>
+    </div>
+
+    <div class="checkin-info">
+      <label class="date-label">Check-In</label>
+      <p class="date-text">{{ bookings.checkInDate | date : "mediumDate" }}</p>
+    </div>
+
+    <div class="checkout-info">
+      <label class="date-label">Check-Out</label>
+      <p class="date-text">{{ bookings.checkOutDate | date : "mediumDate" }}</p>
+    </div>
+
+    <div class="payment-status">
+      @if (bookings.isPaid === true) {
+      <p class="payment-text">Paid</p>
+      } @else if (bookings.isPaid === false) {
+      <p class="payment-failure">Pending</p>
+      }
+    </div>
+  </div>
+</div>

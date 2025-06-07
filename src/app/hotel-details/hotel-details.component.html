@@ -33,18 +33,27 @@
   <div class="hotel-details-availability">
     <div class="hotel-details-card-availability">
       <label class="hotel-details-label">Check-In</label>
-      <input class="hotel-details-date" type="date" />
+      <input class="hotel-details-date" type="date" [(ngModel)]="checkIn" />
     </div>
     <div class="hotel-details-card-availability">
       <label class="hotel-details-label">Check-Out</label>
-      <input class="hotel-details-date" type="date" />
+      <input class="hotel-details-date" type="date" [(ngModel)]="checkOut" />
     </div>
     <div class="hotel-details-card-availability">
       <label class="hotel-details-label">Guests</label>
-      <input class="hotel-details-date" type="number" min="1" />
+      <input
+        class="hotel-details-date"
+        type="number"
+        min="1"
+        [(ngModel)]="guest"
+      />
     </div>
-    <button class="hotel-details-availability-button">
-      Check Availability
+    <button
+      class="hotel-details-availability-button"
+      (click)="bookNow()"
+      [routerLink]="['/bookings']"
+    >
+      Book Now
     </button>
   </div>
   <div
