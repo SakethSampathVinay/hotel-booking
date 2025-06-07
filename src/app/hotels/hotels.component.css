@@ -56,3 +56,13 @@
 .hr-line {
   border: 1px solid #ccc;
 }
+
+.hotel-rooms-not-available {
+  text-align: center;
+  font-family: "Roboto";
+  font-weight: bold;
+}
+
+.hotel-rooms-card-container {
+  cursor: pointer;
+}

@@ -5,7 +5,16 @@
       Take advantage of our limited-time offers and special packages to enhance
       your stay and create unforgettable memories.
     </p>
-    <div class="hotel-rooms-card-container" *ngFor="let rooms of filteredRooms">
+
+    <h1 class="hotel-rooms-not-available" *ngIf="filteredRooms.length === 0">
+      No Rooms are Available
+    </h1>
+
+    <div
+      class="hotel-rooms-card-container"
+      *ngFor="let rooms of filteredRooms"
+      [routerLink]="['/rooms', rooms._id]"
+    >
       <div class="hotel-rooms-content-container">
         <img class="image" [src]="rooms.images[1]" />
         <div class="hotel-rooms-content-card-container">
