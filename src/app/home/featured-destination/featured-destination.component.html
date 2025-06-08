@@ -4,51 +4,26 @@
     Discover our handpicked selection of exceptional properties around the
     world, offering unparalleled luxury and unforgettable experiences.
   </p>
+
   <div class="featured-total-container">
-    <div class="featured-card-container">
-      <img [src]="assets.roomImg4" alt="roomImg1" class="featured-image" />
+    <div
+      class="featured-card-container"
+      *ngFor="let room of roomsDummyData"
+      [routerLink]="['/rooms', room._id]"
+    >
+      <img [src]="room.images[0]" alt="Room Image" class="featured-image" />
       <div class="featured-card-content">
-        <h3 class="featured-heading">Urbanza Suites</h3>
-        <p class="featured-address">Main Road 123 Street, 23 Colony</p>
+        <h3 class="featured-heading">{{ room.hotel.name }}</h3>
+        <p class="featured-address">{{ room.hotel.address }}</p>
         <div class="featured-price-container">
-          <h3 class="featured-price">$399/night</h3>
-          <button class="featured-book-now-button">Book now</button>
-        </div>
-      </div>
-    </div>
-    <div class="featured-card-container">
-      <img [src]="assets.roomImg3" alt="roomImg2" class="featured-image" />
-      <div class="featured-card-content">
-        <h3 class="featured-heading">Urbanza Suites</h3>
-        <p class="featured-address">Main Road 123 Street, 23 Colony</p>
-        <div class="featured-price-container">
-          <h3 class="featured-price">$299/night</h3>
-          <button class="featured-book-now-button">Book now</button>
-        </div>
-      </div>
-    </div>
-    <div class="featured-card-container">
-      <img [src]="assets.roomImg2" alt="roomImg3" class="featured-image" />
-      <div class="featured-card-content">
-        <h3 class="featured-heading">Urbanza Suites</h3>
-        <p class="featured-address">Main Road 123 Street, 23 Colony</p>
-        <div class="featured-price-container">
-          <h3 class="featured-price">$249/night</h3>
-          <button class="featured-book-now-button">Book now</button>
-        </div>
-      </div>
-    </div>
-    <div class="featured-card-container">
-      <img [src]="assets.roomImg1" alt="roomImg4" class="featured-image" />
-      <div class="featured-card-content">
-        <h3 class="featured-heading">Urbanza Suites</h3>
-        <p class="featured-address">Main Road 123 Street, 23 Colony</p>
-        <div class="featured-price-container">
-          <h3 class="featured-price">$199/night</h3>
+          <h3 class="featured-price">${{ room.pricePerNight }}/night</h3>
           <button class="featured-book-now-button">Book now</button>
         </div>
       </div>
     </div>
   </div>
-  <button class="all-destinations-button">View All Destinations</button>
+
+  <button class="all-destinations-button" routerLink="/rooms">
+    View All Destinations
+  </button>
 </div>

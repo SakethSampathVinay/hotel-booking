@@ -35,11 +35,10 @@
     </div>
 
     <div class="payment-status">
-      @if (bookings.isPaid === true) {
-      <p class="payment-text">Paid</p>
-      } @else if (bookings.isPaid === false) {
-      <p class="payment-failure">Pending</p>
-      }
+      <p *ngIf="bookings.isPaid; else unpaid" class="payment-text">Paid</p>
+      <ng-template #unpaid>
+        <p class="payment-failure">Pending</p>
+      </ng-template>
     </div>
   </div>
 </div>

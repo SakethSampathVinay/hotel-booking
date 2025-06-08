@@ -42,11 +42,13 @@
   color: #777;
 }
 
-/* 🔥 Main image and 2x2 grid layout */
+/* Main image and 2x2 grid */
 .hotel-details-images {
   display: flex;
   gap: 20px;
   margin-top: 20px;
+  flex-wrap: wrap; /* added for better wrap on smaller screens */
+  justify-content: center; /* center on smaller widths */
 }
 
 .hotel-image-main {
@@ -54,43 +56,51 @@
   height: 500px;
   object-fit: cover;
   border-radius: 10px;
+  flex-shrink: 0;
 }
 
 .hotel-images-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
+  max-width: 320px;
+  width: 100%;
 }
 
 .hotel-grid-image {
-  width: 300px;
+  width: 100%;
   height: 240px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
 }
 
-/* 💰 Price & experience section */
+/* Price & experience */
 .hotel-details-price-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .hotel-detail-experience {
-  font-size: 24px;
-  margin-bottom: 10px;
   font-family: "Roboto";
   font-weight: bold;
   font-size: 30px;
+  margin-bottom: 10px;
+  color: #222;
 }
 
 .hote-details-pricepernight {
   color: black;
+  font-size: 28px;
+  font-weight: 600;
 }
 
+/* Amenities */
 .hotel-details-amenities-container {
   display: flex;
-  flex-wrap: wrap; /* allows wrapping to next line if needed */
+  flex-wrap: wrap;
   gap: 10px;
   margin-top: 5px;
 }
@@ -104,15 +114,15 @@
   font-weight: 500;
 }
 
+/* Availability section */
 .hotel-details-availability {
   background-color: #f4f6f9;
   padding: 20px;
   display: flex;
-  flex-direction: row;
-  border-radius: 12px;
-  align-items: flex-end;
   flex-wrap: wrap;
   gap: 20px;
+  border-radius: 12px;
+  align-items: flex-end;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 50px;
 }
@@ -157,31 +167,50 @@
   height: 45px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  align-self: flex-start;
 }
 
 .hotel-details-availability-button:hover {
   background-color: #1f618d;
 }
 
+/* Room common data */
 .hotel-details-roomCommonData {
   display: flex;
+  align-items: center;
   margin-top: -30px;
+  gap: 10px;
 }
 
 .roomCommonData-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
   padding-right: 10px;
 }
 
-.roomCommonData-description {
-  margin-top: -5px;
+.roomCommonData-title {
+  margin: 0;
+  font-weight: 600;
 }
 
+.roomCommonData-description {
+  margin-top: 5px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* Description */
 .hotel-details-description {
   width: 70%;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+  margin: 0 auto;
 }
 
-/* 📱 Responsive design for small screens */
-@media (max-width: 768px) {
+/* Responsive design */
+@media (max-width: 1024px) {
   .hotel-details-images {
     flex-direction: column;
     align-items: center;
@@ -195,11 +224,58 @@
   .hotel-images-grid {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    justify-items: center;
   }
 
   .hotel-grid-image {
+    height: 180px;
+  }
+
+  .hotel-details-price-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hotel-details-description {
     width: 100%;
-    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hotel-details-name {
+    font-size: 28px;
+  }
+
+  .hotel-details-roomtype {
+    font-size: 16px;
+  }
+
+  .hotel-details-percentageoff {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .hotel-details-amenities {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .hotel-details-availability {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hotel-details-card-availability {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .hotel-details-availability-button {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .hotel-details-description {
+    font-size: 14px;
   }
 }

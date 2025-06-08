@@ -66,3 +66,42 @@
   margin-left: 6px;
   cursor: pointer;
 }
+
+/* Base styles assumed here */
+
+/* Medium devices (tablets) */
+@media (max-width: 1024px) {
+  .filters-container {
+    max-width: 100%;
+    padding-right: 40px; /* reduce side padding */
+    margin-top: 50px;
+  }
+}
+
+/* Small devices (phones) */
+@media (max-width: 480px) {
+  .filters-container {
+    padding: 15px 10px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: none; /* optional, reduce visual clutter */
+  }
+
+  .filters-heading {
+    font-size: 18px;
+  }
+
+  .filters-clear-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .popular-filters-heading {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .popular-filters-card-label {
+    font-size: 14px;
+  }
+}
